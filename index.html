@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="page-title">
+                Coding Quiz Challenge
+            </h1>
+        </header>
+
+        <div class="timer">
+            
+        </div>
+        <div class="quiz-body">
+            <div id="feedback">
+            </div>
+            <h2 class="question" id="question">
+            </h2>
+            <div class="choice-box" id="choice-box">
+                <button class="choice" onclick="checkAnswer(0)"></button>
+
+                <button class="choice" onclick="checkAnswer(1)"></button>
+
+                <button class="choice" onclick="checkAnswer(2)"></button>
+
+                <button class="choice" onclick="checkAnswer(3)"></button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<script src="./script.js"></script>
+
+</html>
