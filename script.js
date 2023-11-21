@@ -99,6 +99,7 @@ function checkAnswer(selected) {
     //add a delay
     setTimeout(() => {
         currentQuestion++;
+        //if there are no more questions, trigger gameover function
         if (currentQuestion < questions.length) {
             showQuestion();
         } else {
