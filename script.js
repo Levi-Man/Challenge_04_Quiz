@@ -7,21 +7,19 @@ let secondsLeft = 30;
 
 //confirm start
 window.alert("You have 30 seconds. Start the quiz?")
-setTime();
 
-//timer
-function setTime() {
-    let timerInterval = setInterval(function () {
+//timer- if time runs out, call gameOver function
+let countdownTimer = setInterval(function () {
+    console.log("value of x ", secondsLeft);
+    if (secondsLeft > 0) {
         secondsLeft--;
         timerElement.textContent = secondsLeft + " seconds left.";
-
-        if (secondsLeft <= 0) {
-            // Stops game and triggers gameover function
-            clearInterval(timerInterval);
-            gameOver();
-        }
-    }, 1100);
-}
+    } else {
+        clearInterval(countdownTimer);
+        console.log("stop");
+        gameOver();
+    }
+}, 1100)
 
 //array of questions
 let questions = [
@@ -99,11 +97,11 @@ function checkAnswer(selected) {
     //add a delay
     setTimeout(() => {
         currentQuestion++;
-        //if there are no more questions, trigger gameover function
+        //if there are no more questions, clear timer, triggering gameover function
         if (currentQuestion < questions.length) {
             showQuestion();
         } else {
-            gameOver();
+            secondsLeft = 0;
         }
     }, 900);
 
